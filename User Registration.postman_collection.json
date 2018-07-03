@@ -1,0 +1,112 @@
+{
+	"variables": [],
+	"info": {
+		"name": "User Registration",
+		"_postman_id": "bc5fffb6-fcd9-ec06-293c-efedc73d46d8",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create User",
+			"request": {
+				"url": "http://localhost:8080/UserRegistration/users",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"karansoni\",\n\t\"email\":\"karansoni94@gmail.com\",\n\t\"pswd\":\"karan\",\n\t\"roleId\":1,\n\t\"securityQAList\":[\n\t{\n\t\t\"questionId\":1,\n\t\t\"answer\":\"ans1\"\n\t},\n\t{\n\t\t\"questionId\":2,\n\t\t\"answer\":\"ans2\"\n\t}\n\t]\n}"
+				},
+				"description": "/users POST"
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"url": "http://localhost:8080/UserRegistration/users/9",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"sonikaran\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get User",
+			"request": {
+				"url": "http://localhost:8080/UserRegistration/users/9",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"url": "http://localhost:8080/UserRegistration/users/8",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get SecurityQuestion List",
+			"request": {
+				"url": "http://localhost:8080/UserRegistration/securityQuestions",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
