@@ -30,6 +30,17 @@ public class User implements Serializable {
     @OneToMany(targetEntity = SecurityQA.class, mappedBy = "user")
     private List<SecurityQA> securityQAs;
 
+    public User() {
+    }
+
+    public User(Integer userId, String username, String email, String pswd, Role role) {
+        this.userId = userId;
+        this.username = username;
+        this.email = email;
+        this.pswd = pswd;
+        this.role = role;
+    }
+
     public Integer getUserId() {
         return userId;
     }
@@ -78,23 +89,23 @@ public class User implements Serializable {
         this.pswd = pswd;
     }
 
-    public UserRequest convertToUserRequest() {
-        UserRequest userRequest = new UserRequest();
-        userRequest.setUserId(this.userId);
-        userRequest.setUsername(this.username);
-        userRequest.setEmail(this.email);
-        userRequest.setPswd(this.pswd);
-        userRequest.setRoleId(this.getRole().getRoleId());
+    public UserVO convertToUserVO() {
+        UserVO userVO = new UserVO();
+        userVO.setUserId(this.userId);
+        userVO.setUsername(this.username);
+        userVO.setEmail(this.email);
+        userVO.setPswd(this.pswd);
+        userVO.setRoleId(this.getRole().getRoleId());
         if (this.securityQAs != null) {
-            List<SecurityQARequest> qaList = new ArrayList<>(this.securityQAs.size());
+            List<SecurityQAVO> qaList = new ArrayList<>(this.securityQAs.size());
             for (SecurityQA qa : this.securityQAs) {
-                SecurityQARequest qaReq = new SecurityQARequest();
+                SecurityQAVO qaReq = new SecurityQAVO();
                 qaReq.setQuestionId(qa.getQuestion().getQuestionId());
                 qaReq.setAnswer(qa.getAnswer());
                 qaList.add(qaReq);
             }
-            userRequest.setSecurityQAList(qaList);
+            userVO.setSecurityQAList(qaList);
         }
-        return userRequest;
+        return userVO;
     }
 }

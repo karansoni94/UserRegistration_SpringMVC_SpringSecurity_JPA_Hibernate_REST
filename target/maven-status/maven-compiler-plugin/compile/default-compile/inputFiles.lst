@@ -1,6 +1,7 @@
-D:\Projects\UserRegistration\src\main\java\com\userregistration\model\UserRequest.java
+D:\Projects\UserRegistration\src\main\java\com\userregistration\model\UserVO.java
+D:\Projects\UserRegistration\src\main\java\com\userregistration\security\BasicAuthEntryPoint.java
 D:\Projects\UserRegistration\src\main\java\com\userregistration\model\Role.java
-D:\Projects\UserRegistration\src\main\java\com\userregistration\model\SecurityQARequest.java
+D:\Projects\UserRegistration\src\main\java\com\userregistration\service\UserServiceImpl.java
 D:\Projects\UserRegistration\src\main\java\com\userregistration\model\User.java
 D:\Projects\UserRegistration\src\main\java\com\userregistration\model\SecurityQA.java
 D:\Projects\UserRegistration\src\main\java\com\userregistration\dao\SecurityQuestionDao.java
@@ -9,7 +10,6 @@ D:\Projects\UserRegistration\src\main\java\com\userregistration\utility\QueryBui
 D:\Projects\UserRegistration\src\main\java\com\userregistration\utility\Constants.java
 D:\Projects\UserRegistration\src\main\java\com\userregistration\model\SecurityQuestion.java
 D:\Projects\UserRegistration\src\main\java\com\userregistration\controller\SecurityQuestionController.java
-D:\Projects\UserRegistration\src\main\java\com\userregistration\security\MyBasicAuthenticationEntryPoint.java
 D:\Projects\UserRegistration\src\main\java\com\userregistration\security\SecurityConfig.java
 D:\Projects\UserRegistration\src\main\java\com\userregistration\controller\UserController.java
 D:\Projects\UserRegistration\src\main\java\com\userregistration\service\SecurityQuestionService.java
@@ -17,4 +17,5 @@ D:\Projects\UserRegistration\src\main\java\com\userregistration\service\UserServ
 D:\Projects\UserRegistration\src\main\java\com\userregistration\dao\SecurityQADao.java
 D:\Projects\UserRegistration\src\main\java\com\userregistration\dao\ModelDao.java
 D:\Projects\UserRegistration\src\main\java\com\userregistration\dao\UserDao.java
-D:\Projects\UserRegistration\src\main\java\com\userregistration\security\CustomFilter.java
+D:\Projects\UserRegistration\src\main\java\com\userregistration\security\SpringSecurityInitializer.java
+D:\Projects\UserRegistration\src\main\java\com\userregistration\model\SecurityQAVO.java

@@ -87,7 +87,7 @@ public class SecurityQA implements Serializable {
                 '}';
     }
 
-    public SecurityQARequest convertToSecurityQARequest() {
-        return new SecurityQARequest(this.question.getQuestionId(), this.answer);
+    public SecurityQAVO convertToSecurityQAVO() {
+        return new SecurityQAVO(this.question.getQuestionId(), this.answer);
     }
 }

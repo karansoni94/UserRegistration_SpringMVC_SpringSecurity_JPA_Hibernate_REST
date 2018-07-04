@@ -3,13 +3,13 @@ package com.userregistration.model;
 import java.io.Serializable;
 import java.util.List;
 
-public class UserRequest implements Serializable {
+public class UserVO implements Serializable {
     Integer userId;
     String username;
     String email;
     String pswd;
     Integer roleId;
-    List<SecurityQARequest> securityQAList;
+    List<SecurityQAVO> securityQAList;
 
     public Integer getUserId() {
         return userId;
@@ -51,22 +51,16 @@ public class UserRequest implements Serializable {
         this.roleId = roleId;
     }
 
-    public List<SecurityQARequest> getSecurityQAList() {
+    public List<SecurityQAVO> getSecurityQAList() {
         return securityQAList;
     }
 
-    public void setSecurityQAList(List<SecurityQARequest> securityQAList) {
+    public void setSecurityQAList(List<SecurityQAVO> securityQAList) {
         this.securityQAList = securityQAList;
     }
 
     public User convertToUser() {
-        User user = new User();
-        user.setUserId(this.userId);
-        user.setUsername(this.username);
-        user.setEmail(this.email);
-        user.setPswd(this.pswd);
         Role role = new Role(this.roleId);
-        user.setRole(role);
-        return user;
+        return new User(this.userId,this.username,this.email,this.pswd, role);
     }
 }

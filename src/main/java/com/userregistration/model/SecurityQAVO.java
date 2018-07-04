@@ -1,13 +1,13 @@
 package com.userregistration.model;
 
-public class SecurityQARequest {
+public class SecurityQAVO {
     Integer questionId;
     String answer;
 
-    public SecurityQARequest() {
+    public SecurityQAVO() {
     }
 
-    public SecurityQARequest(Integer questionId, String answer) {
+    public SecurityQAVO(Integer questionId, String answer) {
         this.questionId = questionId;
         this.answer = answer;
     }
@@ -28,7 +28,7 @@ public class SecurityQARequest {
         this.answer = answer;
     }
 
-    public SecurityQA convertToSecurityQA(){
+    public SecurityQA convertToSecurityQA() {
         return new SecurityQA(this.questionId, this.answer);
     }
 }

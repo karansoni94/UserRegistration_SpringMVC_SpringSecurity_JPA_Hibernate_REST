@@ -18,14 +18,14 @@ public class UserDao extends ModelDao<User> {
         return User.class;
     }
 
-    public User findByUserName(String email) {
+    public User findByUserName(String username) {
         List<User> users = new ArrayList<>();
         CriteriaBuilder cb = getCriteriaBuilder();
-        CriteriaQuery<User> emailFilterQuery = cb.createQuery(User.class);
-        Root<User> root = emailFilterQuery.from(User.class);
-        Predicate emailPredicate = cb.equal(QueryBuilderUtility.getPropertyPath(root, "email"), email);
-        emailFilterQuery.where(emailPredicate);
-        users = executeQuery(emailFilterQuery);
+        CriteriaQuery<User> usernameFilterQuery = cb.createQuery(User.class);
+        Root<User> root = usernameFilterQuery.from(User.class);
+        Predicate usernamePredicate = cb.equal(QueryBuilderUtility.getPropertyPath(root, "username"), username);
+        usernameFilterQuery.where(usernamePredicate);
+        users = executeQuery(usernameFilterQuery);
         if (users.size() > 0) {
             return users.get(0);
         } else {

@@ -17,7 +17,7 @@ public class SecurityQuestionController {
     @Autowired
     SecurityQuestionService securityQuestionService;
 
-    @Secured("ROLE_ADMIN")
+    @Secured({"ROLE_USER", "ROLE_ADMIN"})
     @RequestMapping(method = RequestMethod.GET, produces = "application/json")
     public List<SecurityQuestion> getList() {
         return securityQuestionService.getQuestionList();

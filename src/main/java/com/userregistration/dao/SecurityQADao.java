@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaDelete;
 import javax.persistence.criteria.Root;
+import java.util.List;
 
 @Repository
 public class SecurityQADao extends ModelDao<SecurityQA> {
@@ -20,5 +21,9 @@ public class SecurityQADao extends ModelDao<SecurityQA> {
         Root e = deleteCriteria.from(SecurityQA.class);
         deleteCriteria.where(cb.lessThanOrEqualTo(e.get("user"), userId));
         this.entityManager.createQuery(deleteCriteria).executeUpdate();
+    }
+
+    public boolean isValidSecurityQA(Integer userId, Integer questionId, String answer) {
+        return false;
     }
 }
